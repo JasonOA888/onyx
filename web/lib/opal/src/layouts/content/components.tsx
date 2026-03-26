@@ -103,6 +103,12 @@ interface ContentBaseProps {
 
   /** Ref forwarded to the root `<div>` of the resolved layout. */
   ref?: React.Ref<HTMLDivElement>;
+
+  /** Optional class name applied to the icon element. */
+  iconClassName?: string;
+
+  /** Content rendered below the description, indented to align with it (MdContent only). */
+  bottomChildren?: React.ReactNode;
 }
 
 // ---------------------------------------------------------------------------
@@ -138,6 +144,8 @@ type MdContentProps = ContentBaseProps & {
   auxIcon?: "info-gray" | "info-blue" | "warning" | "error";
   /** Tag rendered beside the title. */
   tag?: TagProps;
+  /** Optional class name applied to the title element. */
+  titleClassName?: string;
 };
 
 /** ContentSm does not support descriptions or inline editing. */
