@@ -1,10 +1,11 @@
 import useSWR from "swr";
 import { DocumentSetSummary } from "@/lib/types";
 import { errorHandlingFetcher } from "@/lib/fetcher";
+import { SWR_KEYS } from "@/lib/swr-keys";
 
 export function useDocumentSets() {
   const { data, error, mutate } = useSWR<DocumentSetSummary[]>(
-    "/api/manage/document-set",
+    SWR_KEYS.documentSets,
     errorHandlingFetcher,
     {
       revalidateOnFocus: false,

@@ -1,5 +1,6 @@
 import useSWR from "swr";
 import { errorHandlingFetcher } from "@/lib/fetcher";
+import { SWR_KEYS } from "@/lib/swr-keys";
 import {
   Settings,
   EnterpriseSettings,
@@ -32,7 +33,7 @@ export function useSettings(): {
   error: Error | undefined;
 } {
   const { data, error, isLoading } = useSWR<Settings>(
-    "/api/settings",
+    SWR_KEYS.settings,
     errorHandlingFetcher,
     {
       revalidateOnFocus: false,
@@ -62,7 +63,7 @@ export function useEnterpriseSettings(eeEnabledRuntime: boolean): {
   const shouldFetch = EE_ENABLED || eeEnabledRuntime;
 
   const { data, error, isLoading } = useSWR<EnterpriseSettings>(
-    shouldFetch ? "/api/enterprise-settings" : null,
+    shouldFetch ? SWR_KEYS.enterpriseSettings : null,
     errorHandlingFetcher,
     {
       revalidateOnFocus: false,
@@ -91,7 +92,7 @@ export function useCustomAnalyticsScript(
   const shouldFetch = EE_ENABLED || eeEnabledRuntime;
 
   const { data } = useSWR<string>(
-    shouldFetch ? "/api/enterprise-settings/custom-analytics-script" : null,
+    shouldFetch ? SWR_KEYS.customAnalyticsScript : null,
     errorHandlingFetcher,
     {
       revalidateOnFocus: false,
