@@ -7,7 +7,12 @@ import { errorHandlingFetcher } from "@/lib/fetcher";
 export default function usePromptShortcuts() {
   const { data, error, isLoading, mutate } = useSWR<InputPrompt[]>(
     "/api/input_prompt",
-    errorHandlingFetcher
+    errorHandlingFetcher,
+    {
+      revalidateOnFocus: false,
+      revalidateIfStale: false,
+      dedupingInterval: 60000,
+    }
   );
 
   const promptShortcuts = data ?? [];

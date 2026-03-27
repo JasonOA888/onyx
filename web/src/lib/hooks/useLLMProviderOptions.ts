@@ -7,7 +7,8 @@ export function useLLMProviderOptions() {
     WellKnownLLMProviderDescriptor[] | undefined
   >("/api/admin/llm/built-in/options", errorHandlingFetcher, {
     revalidateOnFocus: false,
-    dedupingInterval: 60000, // Dedupe requests within 1 minute
+    revalidateIfStale: false,
+    dedupingInterval: 60000,
   });
 
   return {

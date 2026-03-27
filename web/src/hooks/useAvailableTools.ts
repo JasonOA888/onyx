@@ -27,7 +27,9 @@ export function useAvailableTools() {
     "/api/tool",
     errorHandlingFetcher,
     {
-      revalidateOnFocus: true,
+      revalidateOnFocus: false,
+      revalidateIfStale: false,
+      dedupingInterval: 60000,
     }
   );
 
