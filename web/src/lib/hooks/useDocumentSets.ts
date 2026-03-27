@@ -8,6 +8,7 @@ export function useDocumentSets() {
     errorHandlingFetcher,
     {
       revalidateOnFocus: false,
+      revalidateIfStale: false,
       dedupingInterval: 60000,
     }
   );

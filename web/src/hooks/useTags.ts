@@ -22,6 +22,7 @@ export default function useTags() {
     errorHandlingFetcher,
     {
       revalidateOnFocus: false,
+      revalidateIfStale: false,
       dedupingInterval: 60000,
     }
   );

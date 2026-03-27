@@ -34,6 +34,7 @@ export function useCurrentUser(): {
     {
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
+      revalidateIfStale: false,
       dedupingInterval: 30_000,
     }
   );

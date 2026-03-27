@@ -24,6 +24,7 @@ export function useBillingInformation() {
   >(url, errorHandlingFetcher, {
     revalidateOnFocus: false,
     revalidateOnReconnect: false,
+    revalidateIfStale: false,
     dedupingInterval: 30000,
     shouldRetryOnError: false,
     keepPreviousData: true,

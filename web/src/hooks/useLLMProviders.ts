@@ -92,6 +92,7 @@ export function useAdminLLMProviders() {
     errorHandlingFetcher,
     {
       revalidateOnFocus: false,
+      revalidateIfStale: false,
       dedupingInterval: 60000,
     }
   );
@@ -147,6 +148,7 @@ export function useWellKnownLLMProvider(providerEndpoint: string | null) {
     errorHandlingFetcher,
     {
       revalidateOnFocus: false,
+      revalidateIfStale: false,
       dedupingInterval: 60000,
     }
   );
@@ -169,6 +171,7 @@ export function useWellKnownLLMProviders() {
     errorHandlingFetcher,
     {
       revalidateOnFocus: false,
+      revalidateIfStale: false,
       dedupingInterval: 60000,
     }
   );

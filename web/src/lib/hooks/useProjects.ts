@@ -8,6 +8,7 @@ export function useProjects() {
     errorHandlingFetcher,
     {
       revalidateOnFocus: false,
+      revalidateIfStale: false,
       dedupingInterval: 30000,
     }
   );

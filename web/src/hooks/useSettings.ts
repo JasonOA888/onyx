@@ -37,6 +37,7 @@ export function useSettings(): {
     {
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
+      revalidateIfStale: false,
       dedupingInterval: 30_000,
       errorRetryInterval: SETTINGS_ERROR_RETRY_INTERVAL,
     }
@@ -66,6 +67,7 @@ export function useEnterpriseSettings(eeEnabledRuntime: boolean): {
     {
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
+      revalidateIfStale: false,
       dedupingInterval: 30_000,
       errorRetryInterval: SETTINGS_ERROR_RETRY_INTERVAL,
       // Referential equality instead of SWR's default deep comparison.
@@ -94,6 +96,7 @@ export function useCustomAnalyticsScript(
     {
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
+      revalidateIfStale: false,
       dedupingInterval: 60_000,
     }
   );

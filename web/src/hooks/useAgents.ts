@@ -40,6 +40,7 @@ export function useAgents() {
     errorHandlingFetcher,
     {
       revalidateOnFocus: false,
+      revalidateIfStale: false,
       dedupingInterval: 60000,
     }
   );
@@ -80,6 +81,7 @@ export function useAgent(agentId: number | null) {
     errorHandlingFetcher,
     {
       revalidateOnFocus: false,
+      revalidateIfStale: false,
       dedupingInterval: 60000,
     }
   );
